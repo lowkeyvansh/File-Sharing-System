@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Register</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        </nav>
+    </header>
+    <main>
+        <section id="register">
+            <h2>Create an Account</h2>
+            <form action="{{ url_for('register') }}" method="POST">
+                {{ form.hidden_tag() }}
+                <label for="username">Username:</label>
+                {{ form.username }}
+                <label for="email">Email:</label>
+                {{ form.email }}
+                <label for="password">Password:</label>
+                {{ form.password }}
+                <label for="confirm_password">Confirm Password:</label>
+                {{ form.confirm_password }}
+                {{ form.submit }}
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 File Sharing System</p>
+    </footer>
+</body>
+</html>
